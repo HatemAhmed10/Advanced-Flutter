@@ -110,7 +110,7 @@ Widget defaultFormField({
   required TextEditingController controller,
   required TextInputType type,
   Function? onSubmit,
-  Function? onChange,
+  required Function onChange,
   Function? onTap,
   bool isPassword = false,
   required Function validate,
@@ -129,7 +129,7 @@ Widget defaultFormField({
         onSubmit!(s);
       },
       onChanged: (s){
-        onChange!(s) ;
+        onChange(s) ;
       },
       onTap: (){
         onTap!() ;

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmacy_manager2/shared/styles/colors.dart';
-import '../../layout/home_layout.dart';
+import '../../layout/product/product_layout.dart';
 import '../../shared/components/components.dart';
 import '../../shared/styles/assets_manager.dart';
 
@@ -22,7 +22,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goNext() {
-    navigateAndFinish(context,HomeLayout());
+    navigateAndFinish(context,ProductLayout());
   }
 
   @override

@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pharmacy_manager2/shared/bloc_observer.dart';
-import 'package:pharmacy_manager2/shared/cubit/cubit.dart';
-import 'package:pharmacy_manager2/shared/cubit/states.dart';
+
 import 'package:pharmacy_manager2/shared/styles/themes.dart';
-import 'modules/splash/splash_view.dart';
+import 'layout/product/cubit/cubit.dart';
+import 'layout/product/cubit/states.dart';
+import 'layout/product/product_layout.dart';
 
 
 
@@ -23,7 +23,7 @@ void main() async{
           () {
             runApp(MyApp());
       },
-      blocObserver: MyBlocObserver(),
+      //blocObserver: MyBlocObserver(),
   );
 }
 
@@ -32,22 +32,39 @@ class MyApp extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return BlocProvider(
-      create: (BuildContext context) => AppCubit(),
-      child: BlocConsumer<AppCubit, AppStates>(
-        listener: (BuildContext context, AppStates state) {},
-        builder: (context, state) {
-          AppCubit cubit = AppCubit.get(context);
-
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-             theme: lightTheme,
-            // darkTheme: darkTheme,
-            // themeMode: ThemeMode.light,
-            home: SplashView(),
-          );
-        },
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      // darkTheme: darkTheme,
+      // themeMode: ThemeMode.light,
+      home: ProductLayout(),
     );
   }
 }
+
+//
+//
+// class MyApp extends StatelessWidget
+// {
+//   @override
+//   Widget build(BuildContext context)
+//   {
+//     return BlocProvider(
+//       create: (BuildContext context) => ProductCubit(),
+//       child: BlocConsumer<ProductCubit, ProductStates>(
+//         listener: (context, state) {},
+//         builder: (context, state) {
+//           ProductCubit cubit = ProductCubit.get(context);
+//
+//           return MaterialApp(
+//             debugShowCheckedModeBanner: false,
+//             theme: lightTheme,
+//             // darkTheme: darkTheme,
+//             // themeMode: ThemeMode.light,
+//             home: ProductLayout(),
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
